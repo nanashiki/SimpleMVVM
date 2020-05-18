@@ -9,6 +9,10 @@
 import Combine
 
 class DetailViewModel: ObservableObject {
+    init() {
+        print("DetailViewModel init")
+    }
+    
     deinit {
         print("DetailViewModel deinit")
     }
