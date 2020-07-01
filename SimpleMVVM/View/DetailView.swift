@@ -14,6 +14,14 @@ struct DetailView: View {
     var body: some View {
         Form {
             TextField("hoge", text: $viewModel.tfValue)
+            Button(action: {
+                self.viewModel.apply(.submit)
+            }) {
+                Text("Submit")
+            }.disabled(!viewModel.submitButtonEnable)
+        }
+        .onAppear {
+            self.viewModel.apply(.onAppear)
         }
     }
 }
